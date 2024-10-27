@@ -4,7 +4,7 @@ import { SlArrowDown } from 'react-icons/sl';
 import { FiMenu } from 'react-icons/fi';
 import Searchbar from './Searchbar';
 
-const Navbar = () => {
+const Navbar = ({setSearch}:{setSearch:any}) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -27,7 +27,7 @@ const Navbar = () => {
 
       {/* Main Menu (shown on larger screens) */}
       <div className="hidden md:flex items-center w-full">
-        <Searchbar />
+        <Searchbar setSearch={setSearch}/>
 
         {/* Location Dropdown */}
         <div className="relative">
@@ -65,8 +65,8 @@ const Navbar = () => {
 
       {/* Dropdown Menu for Mobile (toggle with hamburger) */}
       {menuOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-white border-t border-gray-200 p-4 shadow-lg space-y-4">
-          <Searchbar />
+        <div className="md:hidden absolute z-10 top-16 left-0 w-full bg-white border-t border-gray-200 p-4 shadow-lg space-y-4">
+          <Searchbar setSearch={setSearch}/>
 
           <div className="relative">
             <button
