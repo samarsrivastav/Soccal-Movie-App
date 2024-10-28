@@ -12,9 +12,8 @@ export default function Episode({search}:{search:any}) {
     const apiKey = import.meta.env.VITE_API_KEY;
 
     const [movie, setMovies] = useState<Movie[]>([])
-    console.log(apiKey)
     const getMovie = async () => {
-        const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&type=episode&s=${search}`)
+        const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&type=series&s=hello`)
         const data = await response.json()
         console.log(data)
         if (data.Response !== "False") {

@@ -7,6 +7,7 @@ import Series from './components/Series'
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom'
 import Episode from './components/Episode'
 import { useState } from 'react'
+import Footer from './components/footer'
 function App() {
   const [search,setSearch]=useState("")
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path='/episode' element={<Episode search={search}/>}></Route>
       </Routes>
     </Router>
-    
+    <Footer/>
     </>
   )
 }

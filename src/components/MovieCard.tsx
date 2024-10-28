@@ -7,7 +7,7 @@ interface Movie{
 }
 export default function MovieCard({movie}:{movie:Movie}) {
   return (
-    <div className='my-5 mx-4 w-56 flex-shrink-0 rounded-lg hover:w-62'> {/* Set a fixed width for each card */}
+    <div className='my-5 mx-4 w-56 flex-shrink-0'>
       <img src={movie.Poster} alt={movie.Title} className="w-full h-full" />
       <div className="overlay items-center justify-center">
         <p className="text-center">{movie.Title}</p>

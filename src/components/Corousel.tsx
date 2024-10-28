@@ -7,9 +7,9 @@ export default function CarouselComp() {
     <div className="flex justify-center">
         <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 w-[95%] my-3 bg-[#eae8e8]">
         <Carousel slideInterval={5000}>
-            <img src={img2} alt="..." />
-            <img src={img1} alt="..." />
-            <img src={img3} alt="..." />
+            <img src={img2} alt="..." className="h-full"/>
+            <img src={img1} alt="..." className="h-full"/>
+            <img src={img3} alt="..." className="h-full"/>
         </Carousel>
         </div>
     </div>

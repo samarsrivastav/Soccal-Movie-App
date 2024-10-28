@@ -12,7 +12,6 @@ export default function Series({search}:{search:any}) {
     const apiKey = import.meta.env.VITE_API_KEY;
 
     const [movie, setMovies] = useState<Movie[]>([])
-    console.log(apiKey)
     const getMovie = async () => {
         const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&type=series&s=${search}`)
         const data = await response.json()

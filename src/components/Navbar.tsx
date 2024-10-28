@@ -38,7 +38,7 @@ const Navbar = ({setSearch}:{setSearch:any}) => {
             Gurugram &nbsp;<SlArrowDown />
           </button>
           {dropdownOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg">
+            <div className="absolute z-10 right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg">
               <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
                 Option 1
               </a>

@@ -61,7 +61,7 @@ const MovieCarousel: React.FC<MovieCarouselProps> = ({ movies }) => {
       <div className="flex justify-evenly overflow-hidden w-full mx-auto px-12">
         <div className="flex  space-x-4">
           {currentMovies.map((movie) => (
-            <div className="shadow-2xl border rounded-xl" key={movie.imdbID}>
+            <div className="shadow-2xl border rounded-xl " key={movie.imdbID}>
               <MovieCard movie={movie} />
             </div>
           ))}
