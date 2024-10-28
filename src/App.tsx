@@ -7,7 +7,7 @@ import Series from './components/Series'
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom'
 import Episode from './components/Episode'
 import { useState } from 'react'
-import Footer from './components/footer'
+import Footer from './components/Footer'
 function App() {
   const [search,setSearch]=useState("")
   return (
