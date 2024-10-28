@@ -10,14 +10,16 @@ interface Movie {
 }
 export default function Series({search}:{search:any}) {
     const apiKey = import.meta.env.VITE_API_KEY;
-
+    const [response,setResponse]=useState<boolean>(false)
     const [movie, setMovies] = useState<Movie[]>([])
     const getMovie = async () => {
         const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&type=series&s=${search}`)
         const data = await response.json()
-        console.log(data)
         if (data.Response !== "False") {
             setMovies(data.Search)
+            setResponse(true)
+        }else{
+            setResponse(false)
         }
     }
     useEffect(() => {
@@ -27,15 +29,21 @@ export default function Series({search}:{search:any}) {
         const dummy=async()=>{
             const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&type=series&s=friends`)
             const data = await response.json()
-            console.log(data)
             if (data.Response !== "False") {
                 setMovies(data.Search)
             }
         }
         dummy()
     }
+    if((search!=="" && response===false) ){
+        return(
+            <div className="flex justify-center">
+                <h1 className="mt-2 text-2xl ">Nothing Found 🚫</h1>
+            </div>
+        )
+    }
     return (
-        <div className="flex overflow-x-auto w-auto items-center mx-auto">
+        <div className="flex overflow-x-auto w-auto items-center mx-auto mb-20">
             <MovieCarousel movies={movie}/>
         </div>
     );
